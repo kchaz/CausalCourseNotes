@@ -13,8 +13,9 @@ bvn3 = cbind(Y,Y)
 sims = list(bvn1,bvn2,bvn3)
 
 # plotting
+pdf("Module3-nonidentifiability.pdf", width = 15, height = 5)  # Adjust size as needed
 par(mfrow = c(1,3))
-par(mar = c(5,5,5,5))
+par(mar = rep(6,4))
 r = c(0,.85,1)
 for (i in 1:3){
     mat = sims[[i]]
@@ -31,5 +32,8 @@ for (i in 1:3){
     Axis(side=1, labels=FALSE)
     Axis(side=2, labels=FALSE)
 }
+
+# Finish plotting
+dev.off()
 
 
